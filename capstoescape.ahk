@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey v2.0
+#Requires AutoHotkey v2.0
 #SingleInstance force
 
 
@@ -11,7 +11,7 @@ exclusions := ["csgo.exe", "cs2.exe", "overwatch.exe", "payday2_win32_release.ex
 #hotif not filters()
 
 filters() {
-    if (WinGetProcessName("A") in exclusions)
+    if (exclusions.Has(WinGetProcessName("A")))
         return true
     return false
 }
